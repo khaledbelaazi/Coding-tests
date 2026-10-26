@@ -9,9 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Les solutions ne sont pas compilées : elles servent uniquement de corrigé. -->
-    <Compile Remove="Solutions/**" />
-    <None Include="Solutions/**" />
+    <Compile Remove="Solutions/**" Condition="'$(Corriges)' != 'true'" />
+    <Compile Remove="Lecons/**" Condition="'$(Corriges)' == 'true'" />
   </ItemGroup>
 
 </Project>
